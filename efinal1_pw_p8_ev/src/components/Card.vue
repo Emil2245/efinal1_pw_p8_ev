@@ -1,10 +1,10 @@
 <template>
     <div class="container">
         <div class="image-container">
-            <img class="imagen-oculta" src="https://placehold.co/200x200/000000/000000.png" alt="No se encontro">
-            <img src="" alt="No se encontro">
+            <!-- <img class="imagen-oculta" src="https://placehold.co/200x200/000000/000000.png" alt="No se encontro"> -->
+            <img :src="foto" alt="No se encontro">
         </div>
-        <p class="nombre-pokemon">HHHHHH</p>
+        <p class="nombre-pokemon">{{ nombre }}</p>
     </div>
 </template>
 
@@ -12,9 +12,13 @@
 export default {
 
     props:{
-        sumarPuntos:{
-            type: Function,
+        nombre:{
+            type: String,
             required: true,
+        },
+        foto:{
+            type: String,
+            required: true
         }
     }
 
@@ -25,6 +29,8 @@ export default {
 img{
     position: absolute;
     display: block;
+    width: 180px;
+    height: 180px;
 }
 p{
     display: block;
